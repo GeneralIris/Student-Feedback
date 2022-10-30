@@ -1,4 +1,4 @@
-# Student Feedback System.
+# Student Feedback System
 
 # About
 This was one of the project done by a group of mine, each tasked on different section such as registration, login etc.
