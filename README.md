@@ -2,7 +2,7 @@
 
 # About
 This was one of the project done by a group of mine, each tasked on different section such as registration, login etc.
-I, was tasked to focus on the staff side (Front and backend) and started to use ajax within my code cause I prefer site not too yeet me to another page
+I, was tasked to focus on the staff side (Front and backend) and started to use ajax within my code cause I prefer site not to yeet me to another page
 
 # System Description
 Consider lecturers require some feedbacks from the students. Here, they are allowed to dynamically add question on a feedback form (CRU) no delete for now.
