@@ -1,0 +1,27 @@
+
+INSERT INTO Roles (RoleID,RoleDesc)
+    VALUES 
+        (1,'Administrator'),
+        (2,'Clerk')
+
+
+INSERT INTO STATUS (StatusID,StatusDesc)
+    VALUES 
+        (1,'Allowed'),
+        (2,'Denied')
+
+
+
+
+INSERT INTO Staff (StaffID,StaffName,StaffEmail,StaffPhone,Username,Password,RoleID,StatusID)
+    VALUES 
+        ('t45UnJ9K3u5mR77t7ut2','AdminTester1','admintester1@gmail.com','0123456789','ATester1','ATester1',1,1),
+        ('5t9RBqKm88T3q587L3TQ','ClerkTester1','clerktester1@gmail.com','0328912031','CTester1','CTester1',2,1),
+        ('MeF72F8Z38sPy62u39Vw','RegularStaff','regularstaff@gmail.com','0168294102','Rstaff','Rstaff',null,null)
+
+
+INSERT INTO STUDENT(StudentID,StudentName,StudentEmail,StudentPhone,Username,Password)
+    VALUES 
+        ('2021102747','Muhd Naim Bin Rizali','muhdnaim@gmail.com','01111720180','naim1234','naim1234'),
+        ('2020112617','Siti Aishah Binti Mohd','Aishah@gmail.com','0123910213','aishah1234','aishah1234'),
+        ('2019213123','Alvin Smurf','Albin@gmail.com','0312838121','alvin1234','alvin1234')

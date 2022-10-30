@@ -1,0 +1,127 @@
+Database name : ITFeedBackDatabase
+username : test
+password : test
+
+
+
+
+
+TABLE : ROLES
+
+
+CREATE TABLE Roles (
+	RoleID INT NOT NULL PRIMARY KEY,
+	RoleDesc VARCHAR(30) NOT NULL
+)
+
+
+
+
+
+
+
+TABLE : STATUS
+
+
+CREATE TABLE Status (
+	StatusID INT NOT NULL PRIMARY KEY,
+	StatusDesc VARCHAR(30) NOT NULL
+)
+
+
+
+
+
+TABLE : RATING TYPE
+
+
+CREATE TABLE RatingType (
+    RatingTypeID INT NOT NULL PRIMARY KEY,
+    RatingTypeDesc VARCHAR(30) NOT NULL
+)
+
+
+
+
+
+TABLE : STAFF
+
+
+CREATE TABLE Staff (
+	StaffID VARCHAR(20) NOT NULL PRIMARY KEY,
+	StaffName VARCHAR(100) NOT NULL,
+    StaffEmail VARCHAR(100) NOT NULL,
+    StaffPhone VARCHAR(13) NOT NULL,
+    Username VARCHAR(20) NOT NULL,
+    Password VARCHAR(100) NOT NULL,
+    RoleID INT,
+    	FOREIGN KEY (RoleID) REFERENCES Roles(RoleID),
+    StatusID INT,
+    	FOREIGN KEY (StatusID) REFERENCES Status(StatusID)
+)
+
+
+
+TABLE : STUDENT 
+
+
+CREATE TABLE STUDENT (
+    StudentID VARCHAR(20) NOT NULL PRIMARY KEY,
+    StudentName VARCHAR(100) NOT NULL,
+    StudentEmail VARCHAR(100) NOT NULL,
+    StudentPhone VARCHAR(13) NOT NULL,
+    Username VARCHAR(20) NOT NULL,
+    Password VARCHAR(100) NOT NULL
+)
+
+
+
+
+TABLE : FEEDBACK
+
+
+CREATE TABLE Feedback (
+	FeedbackID INT NOT NULL PRIMARY KEY 
+            GENERATED ALWAYS AS IDENTITY
+		(START WITH 1000,INCREMENT BY 1),
+    FeedbackDesc VARCHAR(200),
+    StaffID VARCHAR(20) NOT NULL,
+    FOREIGN KEY (StaffID) REFERENCES Staff(StaffID)
+)
+
+
+
+
+
+TABLE : QUESTION
+
+
+CREATE TABLE QUESTION (
+	QuestionID INT NOT NULL PRIMARY KEY 
+        GENERATED ALWAYS AS IDENTITY
+			(START WITH 10000,INCREMENT BY 1),
+    QuestionDesc VARCHAR(200) NOT NULL,
+    FeedbackID INT NOT NULL,
+    FOREIGN KEY (FeedbackID) REFERENCES Feedback(FeedbackID)
+)
+
+
+
+
+TABLE : STUDENTANSWER
+
+
+CREATE TABLE StudentAnswer (
+    StudentAnswerID INT NOT NULL PRIMARY KEY 
+        GENERATED ALWAYS AS IDENTITY
+            (START WITH 10000,INCREMENT BY 1),
+    Comment VARCHAR(200),
+    QuestionID INT NOT NULL,
+    FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID),
+    StudentID VARCHAR(20) NOT NULL,
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    RatingTypeID INT NOT NULL,
+    FOREIGN KEY (RatingTypeID) REFERENCES RatingType(RatingTypeID)
+)
+
+
